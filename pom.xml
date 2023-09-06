@@ -15,6 +15,12 @@
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>8.0.33</version>
 	</dependency>
+	<dependency>
+	    <groupId>org.apache.maven</groupId>
+	    <artifactId>maven</artifactId>
+	    <version>3.6.2</version>
+	    <type>pom</type>
+	</dependency>
   </dependencies>
   <packaging>war</packaging>
   <name>NullA</name>
