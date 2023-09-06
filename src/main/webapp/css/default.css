@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+	font-family: 'SUITE-Regular';
+    margin:0;
+    padding:0;
+}
+#all {
+    width: 98%;
+    margin: 1% auto;
+    border: 2px inset black;
+    border-radius: 5px;
+    background-color: #EDEEF0;
+}
+#projectSec {
+	width: 90%;
+	height: 250px;
+    margin: 5%;
+	border: 1px solid lightgray;
+    border-radius: 7px;
+    transition: 0.8s ease-out;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+header {
+    padding-bottom:10%;
+}
+#boardSec {
+	width: 90%;
+	height: 330px;
+    margin: 5%;
+	border: 1px solid lightgray;
+    border-radius: 7px;
+    transition: 0.8s ease-out;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+#logo {
+	font-family: 'KCC-Ganpan';
+	font-size:50px;
+	border: 2px inset black;
+	border-radius: 5px;
+	padding: 1%;
+	text-align: center;
+	cursor:pointer;
+	background-color: #DCDDDF;
+}
+#logoSec {
+    width: 46%; 
+    float: left;
+    padding: 2% 2% 20px 2%;
+}
+#userSec {
+    width: 46%; 
+    float: right;
+    padding: 1%;
+    margin: 1% 1% 0 1%;
+    transition: 0.6s ease-out;
+    height: 40px;
+    background-color: #DCDDDF;
+	border-radius: 20px;
+}
+footer {
+	height: 100px;
+}
+.clear {
+	clear: both;
+}
+.rigbut {
+	transition: 0.3s;
+	cursor: pointer;
+	float: right;
+	border: 1px solid black;
+	background-color: #DCDDDF;
+	border-radius: 3px;
+	padding: 2px 5px;
+	margin:1%;
+}
+.rigbut:hover {
+	background-color: #EDEEF0;
+}
+.lefbut {
+	transition: 0.3s;
+	cursor: pointer;
+	float: left;
+	border: 1px solid black;
+	background-color: #DCDDDF;
+	border-radius: 3px;
+	padding: 2px 5px;
+	margin:1%;
+}
+.lefbut:hover {
+	background-color: #EDEEF0;
+}
+#dodbogi {
+	width: 23px;
+	padding: 0px;
+}
+#line {
+	border: 1px solid black;
+}
+@media(min-width: 1000px) {
+	#all {
+    width: 980px;
+    margin: 10px auto;
+	}
+}
+@media(max-width: 574px) {
+	#logoSec {
+		width: 90%;
+		margin: 0 3% 3% 3%;
+	}
+	#logo {
+		font-size: 40px;
+	}
+	#userSec {
+		width: 90%;
+		margin: -4% 4% 0 4%;
+		float: left;
+	}
+}
