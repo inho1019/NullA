@@ -1,0 +1,116 @@
+@charset "UTF-8";
+#projectList {
+	display: block;
+	padding:2%;
+}
+#projectUpload {
+	display: none;
+	padding:5%;
+}
+#scrollBut {
+	float: left;
+	padding-top: 55px;
+	width: 3%;
+}
+#up{
+	width: 90%;
+	margin:2x auto;
+	cursor: pointer;
+	transition: 0.3s;
+}
+#up:hover{
+	opacity: 0.7;
+}
+#down{
+	width: 90%;
+	margin:2px auto;
+	transform: scaleY(-1); 
+	cursor: pointer;
+	transition: 0.3s;
+}
+#down:hover{
+	opacity: 0.7;
+}
+#projectScroll {
+	width: 97%;
+	height: 185px;
+	overflow: scroll;
+	overflow: auto;
+	overflow-y: hidden;
+  	flex-wrap: wrap;
+}
+#projectScroll::-webkit-scrollbar {
+	height:9px;
+}
+#projectScroll::-webkit-scrollbar-track {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+#projectScroll::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 10px;
+}
+#projectBox{
+	width: 2250px;
+}
+.projectItem {
+	display: inline-block;
+	height:165px;
+	width:220px;
+	margin: 3px 2px 20px 2px;
+	text-align: center;
+	font-size: 12px;
+	color: gray;
+	cursor: pointer;
+}
+.projectThumb {
+	margin:2% auto;
+	height:120px;
+	width:160px;
+	overflow: hidden;
+}
+.projectThumb img {
+	height:120px;
+	width:160px;
+	object-fit:contain;
+}
+.projectItem h4 {
+	font-size: 15px;
+	color : black;
+}
+.projectTA {
+	width: 100%;
+	resize:none;
+}
+.projectTT {
+	width: 60%;
+	margin-bottom: 3%;
+}
+.projectUR {
+	width: 60%;
+	margin-bottom: 3%;
+}
+@media(max-width: 850px) {
+	#scrollBut {
+	width: 4%;
+	}
+	#projectScroll {
+		width: 96%;
+	}
+}
+@media(max-width: 750px) {
+	#scrollBut {
+	width: 5%;
+	}
+	#projectScroll {
+		width: 95%;
+	}
+}
+@media(max-width: 574px) {
+	#scrollBut {
+	width: 7%;
+	}
+	#projectScroll {
+		width: 93%;
+	}
+}
