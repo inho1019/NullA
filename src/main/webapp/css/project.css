@@ -33,7 +33,7 @@
 }
 #projectScroll {
 	width: 97%;
-	height: 185px;
+	height: 187px;
 	overflow: scroll;
 	overflow: auto;
 	overflow-y: hidden;
@@ -75,8 +75,12 @@
 	object-fit:contain;
 }
 .projectItem h4 {
+	width:100%;
 	font-size: 15px;
 	color : black;
+	white-space: nowrap;
+	overflow: hidden;   
+	text-overflow: ellipsis;
 }
 .projectTA {
 	width: 100%;
@@ -96,6 +100,7 @@
 	}
 	#projectScroll {
 		width: 96%;
+		height: 190px;
 	}
 }
 @media(max-width: 750px) {
@@ -104,6 +109,7 @@
 	}
 	#projectScroll {
 		width: 95%;
+		height: 193px;
 	}
 }
 @media(max-width: 574px) {
@@ -112,5 +118,6 @@
 	}
 	#projectScroll {
 		width: 93%;
+		height: 197px;
 	}
 }

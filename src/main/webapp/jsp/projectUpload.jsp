@@ -8,11 +8,11 @@ if (session.getAttribute("id") == null){
 <form name="uploadForm" action="jsp/uploadProc.jsp" method="post">
 	<div><font size="1">*링크를 앞자리(https://)까지 모두 기입해주세요.</font>
 	<div class="title">링크&nbsp;
-	<input type="url" name="url" class="projectUR" placeholder="https://example.com">
+	<input type="url" name="url" class="projectUR" placeholder="https://example.com" maxlength="1000">
 	</div>
 	</div>
 	<div class="title">이름&nbsp;
-	<input type="text" name="title" class="projectTT" ></div>
+	<input type="text" name="title" class="projectTT" maxlength="100"></div>
 	<div>설명</div>
 	<textarea rows="11" class="projectTA" name="content"></textarea>
 	<input type="hidden" name="writer" value="<%=session.getAttribute("name")%>">

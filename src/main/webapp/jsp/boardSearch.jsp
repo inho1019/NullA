@@ -8,7 +8,7 @@
 	<option value="2">내용</option>
 	<option value="3">글쓴이</option>
 </select>
-<input type="search" placeholder="검색" id="searchBoard">
+<input type="search" placeholder="검색" id="searchBoard" class="mobileSe">
 <div style="clear: both;"></div>
 <div id="searchBox">
 <%

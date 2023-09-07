@@ -8,7 +8,7 @@
 		<tr height="30" align="center">
 			<td width="30%">닉네임</td>
 			<td><input type="text" name="name" minlength='2' 
-			maxlength='16' required="required"></td>
+			maxlength='16' required="required" class="mobileIn"></td>
 		</tr>	
 		<tr height="30" align="center">
 			<td width="30%">성별</td>
@@ -20,16 +20,16 @@
 		<tr height="30" align="center">
 			<td>아이디</td>
 			<td><input type="text" name="id" pattern='^[a-z0-9]*$'
-				 minlength='4' maxlength='16' required="required"></td>
+				 minlength='4' maxlength='16' required="required" class="mobileIn"></td>
 		</tr>	
 		<tr height="30" align="center">
 			<td>비밀번호<div id="see">(보기)</div></td>
 			<td><input type="password" name="pass" pattern='^[a-zA-Z0-9]*$' 
-				minlength='4' maxlength='16' required="required"></td>
+				minlength='4' maxlength='16' required="required" class="mobileIn"></td>
 		</tr>
 		<tr height="30" align="center">
 			<td>이메일</td>
-			<td><input type="email" name="email" value="@"></td>
+			<td><input type="email" name="email" value="@" class="mobileIn"></td>
 		</tr>	
 		<tr height="50">
 			<td colspan="2" align="center">

@@ -18,7 +18,7 @@ request.setCharacterEncoding("UTF-8");
 	        		location.href = '../index.jsp';
 	        	</script><%
 	        }
-	     	org.jsoup.nodes.Element imageElement = document.select("img:not([src*='data']),img:not([src*='base64'])").first();
+	     	org.jsoup.nodes.Element imageElement = document.select("img:not([src*='data']),img:not([src*='base64']),img:not([src*='gif'])").first();
 	        if (imageElement == null) {
 	            imageElement = document.select("link[rel='icon'],link[rel='shortcut icon']").first();
 	            thumb = imageElement.absUrl("href");

@@ -31,11 +31,13 @@
 	font-size: 12px;
 	margin-top: 1%;
 	cursor: pointer;
-
 }
 .listItem h4 {
 	font-size: 15px;
 	color : black;
+	white-space: nowrap;
+	overflow: hidden;   
+	text-overflow: ellipsis;
 }
 .searchItem {
 	display: block;
@@ -92,5 +94,13 @@
 	}
 	#pageCount span {
 		font-size: 10px;
+	}
+	.listItem {
+		margin-top: 2%;
+	}
+}
+@media(max-width: 400px) {
+	.listItem {
+		margin-top: 3%;
 	}
 }

@@ -7,7 +7,7 @@ if (session.getAttribute("id") == null){
 <h2 style="margin-bottom: 5%">글작성</h2>
 <form name="writeForm" action="jsp/writeProc.jsp" method="post">
 	<div class="title">제목&nbsp;
-	<input type="text" name="title" class="boardTT" ></div>
+	<input type="text" name="title" class="boardTT" maxlength="100"></div>
 	<div>내용</div>
 	<textarea rows="10" class="boardTA" name="content"></textarea>
 	<input type="hidden" name="writer" value="<%=session.getAttribute("name")%>">

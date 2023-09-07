@@ -11,7 +11,7 @@
 			</td>
 			<td>
 				<input type="text" name="id" pattern='^[a-z0-9]*$'
-				 minlength='4' maxlength='16' required="required">
+				 minlength='4' maxlength='16' required="required" class="mobileIn">
 			</td>
 		</tr>	
 		<tr height="40" align="center">
@@ -20,7 +20,7 @@
 			</td>
 			<td>
 				<input type="password" name="pass" pattern='^[a-zA-Z0-9]*$' 
-				minlength='4' maxlength='16' required="required">
+				minlength='4' maxlength='16' required="required" class="mobileIn">
 			</td>
 		</tr>	
 		<tr height="50">

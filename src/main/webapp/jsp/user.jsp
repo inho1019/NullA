@@ -13,11 +13,12 @@ if (session.getAttribute("id") == null){
 		<table style="width:65%;margin:0 auto;border-collapse: collapse;">
 			<tr height="20" style="border-bottom: 1.2px solid grey">
 				<td align="center" width="35%" >이름</td>
-				<td><%=session.getAttribute("name")%></td>
+				<td width="65%"><div class="textOver" >
+				<%=session.getAttribute("name")%></div></td>
 			</tr> 
 			<tr height="20" style="border-bottom: 1.2px solid grey">
 				<td align="center" width="35%">아이디</td>
-				<td><%=session.getAttribute("id")%></td>
+				<td class="textOver" width="65%"><%=session.getAttribute("id")%></td>
 			</tr> 
 			<tr height="20" align="left">
 				<td colspan="2">

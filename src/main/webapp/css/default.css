@@ -129,4 +129,10 @@ footer {
 		margin: -4% 4% 0 4%;
 		float: left;
 	}
+	.mobileIn {
+		width:60%;
+	}
+	.mobileSe {
+		width:40%;
+	}
 }

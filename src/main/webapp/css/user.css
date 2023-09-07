@@ -56,6 +56,12 @@
 .formBut:hover {
 	background-color: #EDEEF0;
 }
+.textOver{
+	width:18vw;
+	white-space: nowrap;
+	overflow: hidden;   
+	text-overflow: ellipsis;
+}
 #userIMG{
 	cursor: pointer;
 	width: 20px;
@@ -67,4 +73,14 @@
 	padding-top: 4px;
 	background-color:  whitesmoke;
 	border-radius: 10px;
+}
+@media(min-width: 900px) {
+	.textOver{
+		width:200px;
+	}
+}
+@media(max-width: 574px) {
+	.textOver{
+		width:40vw;
+	}
 }
