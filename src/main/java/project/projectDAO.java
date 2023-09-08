@@ -60,7 +60,7 @@ public class projectDAO {
 	public ArrayList<projectBean> selectPR() {
 		ArrayList<projectBean> arpb = new ArrayList<projectBean>();
 		
-		String sql = "select num,thumb,title,writer from project order by num desc";
+		String sql = "select num,thumb,title,writer,content from project order by num desc";
 		
 		try {
 			conn();
@@ -75,6 +75,7 @@ public class projectDAO {
 				pb.setThumb(rs.getString(2));
 				pb.setTitle(rs.getString(3));
 				pb.setWriter(rs.getString(4));
+				pb.setContent(rs.getString(5));
 				
 				arpb.add(pb);
 			}

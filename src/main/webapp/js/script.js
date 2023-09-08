@@ -8,6 +8,12 @@ const bs = document.getElementById('boardSec');
 
 const pu = document.getElementById('projectUpload');
 const pl = document.getElementById('projectList');
+const pt = document.getElementById('projectTop');
+const prsc = document.getElementById('projectScroll');
+const prbx = document.getElementById('projectBox');
+const scb = document.getElementById('scrollBut');
+const st = document.getElementById('searchTop');
+const pdata = document.getElementById('searchProject');
 const hdnpb = document.getElementById('hdnPB');
 
 const lb = document.querySelectorAll('.lefbut');
@@ -64,6 +70,24 @@ sdata.addEventListener("input",function(){
 		}
 	}
 });
+pdata.addEventListener("input",function(){
+	var psel = document.getElementById('projectSel');
+	for(let i = 0;i < pitem.length;i++) {
+		if(psel.value == 1) {
+			if(pitem[i].querySelector('input[name="title"]').value.includes(pdata.value)) 
+			pitem[i].style.display = "inline-block";
+			else pitem[i].style.display = "none";
+		} else if(psel.value == 2) {
+			if(pitem[i].querySelector('input[name="content"]').value.includes(pdata.value)) 
+			pitem[i].style.display = "inline-block";
+			else pitem[i].style.display = "none";
+		} else if(psel.value == 3) {
+			if(pitem[i].querySelector('input[name="writer"]').value.includes(pdata.value)) 
+			pitem[i].style.display = "inline-block";
+			else pitem[i].style.display = "none";
+		}
+	}
+});
 function xBut() {
 	for(let i = 0;i < lb.length;i++) lb[i].disabled = true;
 	for(let i = 0;i < rb.length;i++) rb[i].disabled = true;
@@ -103,7 +127,9 @@ function mvWrite() {
     }, 390);
 }
 function mvSearch(a) {
-	if (a == 1) {	
+	if (a == 1) {
+		resetB(0);
+		resetP(1);	
 		var ssel = document.getElementById('searchSel');
 		ssel.value = 3;
 		sdata.value = sessionName;
@@ -113,12 +139,33 @@ function mvSearch(a) {
 			else sitem[i].style.display = "none";
 		}
 	}
+	if(psw == 1) {
+		psw = 0;
+		pdata.value = null;
+		scroll = 0;
+		st.style.display = "none";
+		scb.style.display = "block";
+		scb.style.animation="fadein 1s";
+		prsc.style.overflow = "auto";
+		prsc.style.overflowY = "hidden";
+		prsc.style.height="";
+		prsc.style.width="";
+		prbx.style.width="2250px";
+		prbx.style.textAlign="left";
+		pt.style.display = "block";
+	    pt.style.animation = "fadein 1s";
+		for(let i = 0;i < pitem.length;i++) {pitem[i].style.display="none";};	   
+	    setTimeout(() => {
+			for(let i = 0;i < pitem.length;i++) {pitem[i].style.display="inline-block";};
+		}, 340);
+	}
 	xBut();
 	ssw = 1;
 	bl.style.animation = "fadeout 0.4s"
 	cs.style.height = "0px";
 	cs.style.opacity = "0";
 	bs.style.height = "450px";
+	bs.style.opacity = "1";
 	setTimeout(() => {
 		bl.style.display = "none";
         bsch.style.display = "block";
@@ -147,16 +194,16 @@ function backWrite(bp) {
 			sdata.value = null;
 		}
 	} else {
-		xBut();
-		bs.style.animation = "rollleft 1s"
-		br.style.animation = "fadeout 1s"
-		setTimeout(() => {
-		bsch.style.display = "block";
-        br.style.display = "none";
-        bs.style.animation = "rollright 1s"
-        bsch.style.animation = "fadein 2s"
-        oBut();
-    }, 990);
+			xBut();
+			bs.style.animation = "rollleft 1s"
+			br.style.animation = "fadeout 1s"
+			setTimeout(() => {
+			bsch.style.display = "block";
+	        br.style.display = "none";
+	        bs.style.animation = "rollright 1s"
+	        bsch.style.animation = "fadein 2s"
+	        oBut();
+	    }, 990);
 	}
 }
 function mvRead(title,writer,content,num,logtime) {
@@ -277,7 +324,6 @@ function mvUpload() {
     }, 390);
 }
 function backUpload() {
-	/*if (ssw == 0 || sdata == null || bp == 'boardSearch') {*/
 	xBut();
 	var bwr = document.getElementById('projectUpload');
 	bwr.style.animation = "fadeout 0.4s"
@@ -290,22 +336,6 @@ function backUpload() {
         pl.style.animation = "fadein 1s"
         oBut();
     }, 390);
-    /*if(bp == 'boardSearch') {
-		ssw = 0;
-		sdata.value = null;
-	}
-	} else {
-		xBut();
-		bs.style.animation = "rollleft 1s"
-		br.style.animation = "fadeout 1s"
-		setTimeout(() => {
-		bsch.style.display = "block";
-        br.style.display = "none";
-        bs.style.animation = "rollright 1s"
-        bsch.style.animation = "fadein 2s"
-        oBut();
-    }, 990);
-	}*/
 }
 function checkUpload() {
 	var pur = document.querySelector('.projectUR');
@@ -321,24 +351,42 @@ function checkUpload() {
 }
 
 let scroll = 0;
+if (document.getElementById('hdnSC').value != 0) {
+	scroll = parseInt(document.getElementById('hdnSC').value);
+	pitem[scroll].scrollIntoView({behavior:'smooth',block: 'nearest'});
+   	document.addEventListener('wheel', wheel, { passive: false });
+   	setTimeout(() => {
+		document.removeEventListener('wheel', wheel);
+    }, 1000);
+}
 function wheel(e) {
   e.preventDefault();
 }
 function mvScroll(a) {
 	var prb = document.getElementById('projectBox');
+	var up = document.getElementById('up');
+	var down = document.getElementById('down');
 	scroll= scroll + a;
-	if (scroll == -10) {
-		prb.style.animation="scrollendup 0.8s";
+	if (scroll < 0) {
+		prb.style.animation="scrollendup 0.6s";
+		up.style.display = "none";
+		down.style.display = "none";
 		scroll = 0;
 		setTimeout(() => {
+			up.style.display = "block";
+			down.style.display = "block";
 			prb.style.animation="0s";
-		}, 800);
+		}, 600);
 	} else if(scroll > hdnpb.value) {
-		prb.style.animation="scrollenddown 0.8s";
+		prb.style.animation="scrollenddown 0.6s";
+		up.style.display = "none";
+		down.style.display = "none";
 		scroll -= 10;
 		setTimeout(() => {
+			up.style.display = "block";
+			down.style.display = "block";
 			prb.style.animation="0s"
-		}, 800);
+		}, 600);
 	} else {
 	   	pitem[scroll].scrollIntoView({behavior:'smooth',block: 'nearest'});
 	   	document.addEventListener('wheel', wheel, { passive: false });
@@ -348,3 +396,103 @@ function mvScroll(a) {
     }
 }
 
+let psw = 0;
+let scrollWidth = prsc.offsetWidth;
+let scrollHeight = prsc.offsetHeight;
+
+function chSearch(a) {
+	scrollWidth = prsc.offsetWidth;
+	scrollHeight = prsc.offsetHeight;
+	xBut();
+	if(ssw == 1) {
+		ssw = 0;
+		sdata.value = null;
+		bsch.style.display = "none";
+		bl.style.display = "block";
+		bl.style.animation = "0s";
+	}
+	psw = 1;
+	pt.style.animation = "fadeout 0.4s"
+	scb.style.display = "none";
+	bs.style.height = "0px";
+	bs.style.opacity = "0";
+	cs.style.height = "500px";
+	cs.style.opacity = "1";
+	prsc.style.overflowY = "auto";
+	prsc.style.overflowX = "hidden";
+	prsc.style.height= "440px";
+	prsc.style.width="100%";
+	prbx.style.width="100%";
+	prbx.style.textAlign="center";
+	for(let i = 0;i < pitem.length;i++) {pitem[i].style.display="none"};
+	setTimeout(() => {
+		pt.style.display = "none";
+        st.style.display = "block";
+        st.style.animation = "fadein 1s"
+        for(let i = 0;i < pitem.length;i++) {pitem[i].style.display="inline-block"};
+        if (a == 1) {
+		resetB(1);
+		resetP(0);	
+		var psel = document.getElementById('projectSel');
+		psel.value = 3;
+		pdata.value = sessionName;
+			for(let i = 0;i < pitem.length;i++) {
+				if(pitem[i].querySelector('input[name="writer"]').value.includes(pdata.value)) 
+				pitem[i].style.display = "inline-block";
+				else pitem[i].style.display = "none";
+			}
+		}
+        setTimeout(() => {
+        	oBut();
+        }, 590);
+    }, 390);
+}
+function backPrSe() {
+	xBut();
+	psw = 0;
+	scroll = 0;
+	st.style.animation = "fadeout 0.4s"
+	bs.style.height = "330px";
+	bs.style.opacity = "1";
+	cs.style.height = "250px";
+	prsc.style.overflowY = "hidden";
+	prsc.style.height="";
+	prsc.style.width="";
+	prbx.style.width="2250px";
+	prbx.style.textAlign="left";
+	for(let i = 0;i < pitem.length;i++) {pitem[i].style.display="none"};
+	setTimeout(() => {
+		st.style.display = "none";
+		scb.style.display = "block";
+        pt.style.display = "block";
+        pt.style.animation = "fadein 1s"
+        prsc.style.overflow = "auto";
+		prsc.style.overflowY = "hidden";
+        for(let i = 0;i < pitem.length;i++) {pitem[i].style.display="inline-block"};
+        setTimeout(() => {
+        	oBut();
+        }, 590);
+    }, 390);
+}
+function mvProject() {
+	xBut();
+	pl.style.animation = "fadeout 0.4s"
+	bs.style.height = "0px";
+	bs.style.opacity = "0";
+	cs.style.height = "500px";
+	cs.style.animation = "rollup 0.8s forwards"
+	setTimeout(() => {
+		pl.style.display = "none";
+    }, 390);
+}
+function resetB(a) {
+	if(a == 1) bl.style.display = "block";
+	br.style.display = "none";
+	bu.style.display = "none";
+	bw.style.display = "none";
+	bsch.style.display = "none";
+}
+function resetP(a) {
+	if(a == 1) pl.style.display = "block";
+	pu.style.display = "none";
+}

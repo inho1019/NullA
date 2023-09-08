@@ -9,7 +9,9 @@
 	
 	bb.setTitle(request.getParameter("title"));
 	bb.setWriter(request.getParameter("writer"));
-	bb.setContent(request.getParameter("content").replace(System.getProperty("line.separator"), "<br>"));
+	bb.setContent(request.getParameter("content")
+			.replace(System.getProperty("line.separator"), "<br>")
+			.replace(" ","&nbsp;"));
 	boardDAO bd = new boardDAO();
 	bd.insertBD(bb);
 	

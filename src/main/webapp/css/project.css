@@ -14,9 +14,10 @@
 }
 #up{
 	width: 90%;
-	margin:2x auto;
+	margin:2px auto;
 	cursor: pointer;
 	transition: 0.3s;
+	animation: fadein 0.5s;
 }
 #up:hover{
 	opacity: 0.7;
@@ -24,9 +25,9 @@
 #down{
 	width: 90%;
 	margin:2px auto;
-	transform: scaleY(-1); 
 	cursor: pointer;
 	transition: 0.3s;
+	animation: fadein 0.5s;
 }
 #down:hover{
 	opacity: 0.7;
@@ -37,10 +38,12 @@
 	overflow: scroll;
 	overflow: auto;
 	overflow-y: hidden;
+	transition: 0.4s;
   	flex-wrap: wrap;
 }
 #projectScroll::-webkit-scrollbar {
 	height:9px;
+	width:9px;
 }
 #projectScroll::-webkit-scrollbar-track {
     background-color: lightgray;
@@ -62,6 +65,7 @@
 	font-size: 12px;
 	color: gray;
 	cursor: pointer;
+	animation: fadein 0.4s;
 }
 .projectThumb {
 	margin:2% auto;
@@ -94,6 +98,10 @@
 	width: 60%;
 	margin-bottom: 3%;
 }
+#searchTop {
+	display: none;
+	margin-bottom: 10px;
+}
 @media(max-width: 850px) {
 	#scrollBut {
 	width: 4%;
@@ -118,6 +126,15 @@
 	}
 	#projectScroll {
 		width: 93%;
+		height: 197px;
+	}
+}
+@media(max-width: 424px) {
+	#scrollBut {
+	width: 10%;
+	}
+	#projectScroll {
+		width: 90%;
 		height: 197px;
 	}
 }

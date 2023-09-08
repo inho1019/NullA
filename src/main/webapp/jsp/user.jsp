@@ -24,7 +24,7 @@ if (session.getAttribute("id") == null){
 				<td colspan="2">
 					<div id=userIcon>
 						<img src="img/userlist.png" onclick="mvSearch(1)" id="userIMG">
-						<img src="img/userproject.png" id="userIMG">
+						<img src="img/userproject.png" onclick="chSearch(1)" id="userIMG">
 						<img src="img/logout.png" id="userIMG" onclick="location.href='jsp/logout.jsp'">
 					</div>
 				</td>

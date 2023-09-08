@@ -1,3 +1,4 @@
+<%@page import="escape.es"%>
 <%@page import="board.boardDAO"%>
 <%@page import="board.boardBean"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,17 +14,17 @@
 <div id="searchBox">
 <%
 boardDAO bd = new boardDAO();
-
+es es = new es();
 ArrayList<boardBean> arbb = bd.selectBD();
 for (int i = 0;i < arbb.size();i++) {
 	%><div class="searchItem" onclick="mvReadS(
-	'<%=arbb.get(i).getTitle()%>','<%=arbb.get(i).getWriter()%>',
-	'<%=arbb.get(i).getContent()%>','<%=arbb.get(i).getNum()%>'
+	'<%=es.escape(arbb.get(i).getTitle())%>','<%=arbb.get(i).getWriter()%>',
+	'<%=es.escape(arbb.get(i).getContent())%>','<%=arbb.get(i).getNum()%>'
 	,'<%=arbb.get(i).getLogtime()%>');">
-	<h4><%=arbb.get(i).getTitle()%></h4>
+	<h4><%=es.escape(arbb.get(i).getTitle())%></h4>
 	<p class="info"><%=arbb.get(i).getWriter()%>&nbsp;&nbsp;|
-	<input type="hidden" name="title" value="<%=arbb.get(i).getTitle()%>">
-	<input type="hidden" name="content" value="<%=arbb.get(i).getContent()%>">
+	<input type="hidden" name="title" value="<%=es.escape(arbb.get(i).getTitle())%>">
+	<input type="hidden" name="content" value="<%=es.escape(arbb.get(i).getContent())%>">
 	<input type="hidden" name="writer" value="<%=arbb.get(i).getWriter()%>">
 	<span style="float:right;"><%=arbb.get(i).getLogtime()%></span>
 	</p><%

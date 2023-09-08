@@ -39,10 +39,21 @@
     <main>
         <section id="projectSec">
             <div id="projectList">
-	        	<img src="img/search.png" onclick="mvFind(0)" class="lefbut" id="dodbogi">
-	        	<%if (session.getAttribute("name") != null) {%>
-    	    	<button onclick="mvUpload()" class="rigbut">프로젝트 업로드</button>
+            	<div id="projectTop">
+		        	<img src="img/search.png" onclick="chSearch(0)" class="lefbut" id="dodbogi">
+		        	<%if (session.getAttribute("name") != null) {%>
+	    	    	<button onclick="mvUpload()" class="rigbut">프로젝트 업로드</button>
     	    	<%} %>
+    	    	</div>
+            	<div id="searchTop">
+		        	<select name="projectSel" id="projectSel">
+						<option value="1">이름</option>
+						<option value="2">설명</option>
+						<option value="3">제작자</option>
+					</select>
+					<input type="search" placeholder="검색" id="searchProject" class="mobileSe">
+					<button class="rigbut" onclick="backPrSe()">취소</button>
+    	    	</div>
     	    	<div class="clear"></div>
    				<jsp:include page="jsp/projectList.jsp"></jsp:include>
         	</div>

@@ -1,9 +1,12 @@
+<%@page import="escape.es"%>
 <%@page import="board.boardBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="board.boardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<%
+	es es = new es();
+	
 	boardDAO bd = new boardDAO();
 	
 	ArrayList<boardBean> arbb = bd.selectBD();
@@ -32,10 +35,10 @@
 	}
 	for (int i = pg;i < finish;i++) {
 		%><div class="listItem" onclick="mvRead(
-		'<%=arbb.get(i).getTitle()%>','<%=arbb.get(i).getWriter()%>',
-		'<%=arbb.get(i).getContent()%>','<%=arbb.get(i).getNum()%>'
+		'<%=es.escape(arbb.get(i).getTitle())%>','<%=arbb.get(i).getWriter()%>',
+		'<%=es.escape(arbb.get(i).getContent())%>','<%=arbb.get(i).getNum()%>'
 		,'<%=arbb.get(i).getLogtime()%>');">
-		<h4><%=arbb.get(i).getTitle()%></h4>
+		<h4><%=es.escape(arbb.get(i).getTitle())%></h4>
 		<p class="info"><%=arbb.get(i).getWriter()%>&nbsp;&nbsp;|
 		<span style="float:right;"><%=arbb.get(i).getLogtime()%></span>
 		</p><%
