@@ -18,8 +18,10 @@ if (session.getAttribute("id") == null){
 			</tr> 
 			<tr height="20" style="border-bottom: 1.2px solid grey">
 				<td align="center" width="35%">아이디</td>
-				<td class="textOver" width="65%"><%=session.getAttribute("id")%></td>
+				<td width="65%"><div class="textOver" >
+				<%=session.getAttribute("id")%></div></td>
 			</tr> 
+			<%if(request.getParameter("num") == null) {%>
 			<tr height="20" align="left">
 				<td colspan="2">
 					<div id=userIcon>
@@ -29,6 +31,13 @@ if (session.getAttribute("id") == null){
 					</div>
 				</td>
 			</tr> 
+			<%} else {%>
+			<tr height="20">
+				<td align="center" width="35%">이메일</td>
+				<td class="textOver" width="65%"><div class="textOver" >
+				<%=session.getAttribute("email")%></div></td>
+			</tr> 
+			<%}%>
 		</table>
 	</div><%
 }

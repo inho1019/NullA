@@ -16,6 +16,6 @@ if (session.getAttribute("id") == null){
 	<div>설명</div>
 	<textarea rows="11" class="projectTA" name="content"></textarea>
 	<input type="hidden" name="writer" value="<%=session.getAttribute("name")%>">
-	<input type="button" class="rigbut" onclick="checkUpload()" value="등록"> 
+	<input type="button" class="rigbut" onclick="checkUpload(0)" value="등록"> 
 </form>
 <% } %>

@@ -41,6 +41,9 @@
 	transition: 0.4s;
   	flex-wrap: wrap;
 }
+#projectM {
+	display: none;
+}
 #projectScroll::-webkit-scrollbar {
 	height:9px;
 	width:9px;
@@ -78,6 +81,35 @@
 	width:160px;
 	object-fit:contain;
 }
+.projectReadTop img {
+	float:right;
+	height:60px;
+	width:80px;
+	object-fit:contain;
+}
+.projectReadTop h1 {
+	font-size: 25px;
+	float:left;
+	margin-bottom: 2px;
+}
+.projectReadTop a {
+	width:30%;
+	padding: 3px 3px;
+	clear:left;
+	float:left;
+	border-radius: 5px;
+	font-size:15px;
+	text-decoration: none;
+	background-color: #DCDDDF;
+	text-align: center;
+	margin-top:3px;
+	color: black;
+	font-weight: bold;
+	transition: 0.3s ease-out;
+}
+.projectReadTop a:hover {
+	background-color: lightgray;
+}
 .projectItem h4 {
 	width:100%;
 	font-size: 15px;
@@ -98,9 +130,38 @@
 	width: 60%;
 	margin-bottom: 3%;
 }
+#pinfo {
+	margin: 10px 0;
+	border-top:1px solid gray;
+	border-bottom:1px solid gray;
+}
+#projectRead {
+	width: 84%;
+	height: 500px;
+    margin: 5%;
+	border: 1px solid lightgray;
+    border-radius: 7px;
+    transition: 0.8s ease-out;
+    background-color: whitesmoke;
+    overflow: hidden;
+    padding: 3%;
+}
+#projectNull {
+	width: 90%;
+	height: 0px;
+    margin: 5%;
+    opacity: 0;
+	border: 1px solid lightgray;
+    border-radius: 7px;
+    transition: 0.8s ease-out;
+    background-color: whitesmoke;
+}
 #searchTop {
 	display: none;
 	margin-bottom: 10px;
+}
+#projectR {
+	animation: fadein 0.5s;
 }
 @media(max-width: 850px) {
 	#scrollBut {

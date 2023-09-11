@@ -12,6 +12,9 @@
 	ArrayList<projectBean> arpb = pd.selectPR();
 	
 	es es = new es();
+	
+	int bdpg = 0;
+	if(request.getParameter("bdpg") != null) bdpg = Integer.parseInt(request.getParameter("bdpg"));
 %>
 <input type="hidden" value="<%=arpb.size()%>" id="hdnPB">
 <input type="hidden" value="<%=scroll%>" id="hdnSC">
@@ -23,7 +26,7 @@
 	<div id="projectBox">
 	<%
 		for(int i = 0;i < arpb.size();i++) {
-			%><div class="projectItem" onclick='mvProject();location.href="projectRead.jsp?num=<%=arpb.get(i).getNum()%>"'><%
+			%><div class="projectItem" onclick='mvProject();location.href="project.jsp?num=<%=arpb.get(i).getNum()%>&sc=<%=i%>&bdpg=<%=bdpg%>"'><%
 			%><div class="projectThumb"><img alt="projectIMG" onerror="this.src='img/project.png'" src="
 			<%=arpb.get(i).getThumb()%>"></div>
 			<h4><%=es.escape(arpb.get(i).getTitle())%></h4>

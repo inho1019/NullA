@@ -11,6 +11,9 @@ const pl = document.getElementById('projectList');
 const pt = document.getElementById('projectTop');
 const prsc = document.getElementById('projectScroll');
 const prbx = document.getElementById('projectBox');
+const prr = document.getElementById('projectR');
+const prm = document.getElementById('projectM');
+const pr = document.getElementById('projectRead');
 const scb = document.getElementById('scrollBut');
 const st = document.getElementById('searchTop');
 const pdata = document.getElementById('searchProject');
@@ -101,6 +104,7 @@ function oBut() {
 	for(let i = 0;i < sitem.length;i++) sitem[i].disabled = false;
 }
 function checkInput(a,b) {
+	oBut();
 	var btt = document.querySelectorAll('.boardTT');
 	var bta = document.querySelectorAll('.boardTA');
 	if(btt[a].value == "") btt[a].placeholder = "제목을 입력해주세요";
@@ -337,7 +341,7 @@ function backUpload() {
         oBut();
     }, 390);
 }
-function checkUpload() {
+function checkUpload(b) {
 	var pur = document.querySelector('.projectUR');
 	var ptt = document.querySelector('.projectTT');
 	var pta = document.querySelector('.projectTA');
@@ -345,7 +349,20 @@ function checkUpload() {
 	else if (ptt.value == "") ptt.placeholder = "제목을 입력해주세요"
 	else if (pta.value == "") pta.placeholder = "내용을 입력해주세요"
 	else {
-		document.uploadForm.submit();
+		if (b == 0) document.uploadForm.submit();
+		else if (b == 1) document.modifyForm.submit();
+		xBut();
+	}
+}
+
+function checkInput(a,b) {
+	var btt = document.querySelectorAll('.boardTT');
+	var bta = document.querySelectorAll('.boardTA');
+	if(btt[a].value == "") btt[a].placeholder = "제목을 입력해주세요";
+	else if(bta[a].value == "") bta[a].placeholder = "내용을 입력해주세요";
+	else {
+		if (b == 0) document.writeForm.submit();
+		else if (b == 1) document.updateForm.submit();
 		xBut();
 	}
 }
@@ -480,7 +497,7 @@ function mvProject() {
 	bs.style.height = "0px";
 	bs.style.opacity = "0";
 	cs.style.height = "500px";
-	cs.style.animation = "rollup 0.8s forwards"
+	cs.style.animation = "rollup 1s forwards";
 	setTimeout(() => {
 		pl.style.display = "none";
     }, 390);
@@ -495,4 +512,29 @@ function resetB(a) {
 function resetP(a) {
 	if(a == 1) pl.style.display = "block";
 	pu.style.display = "none";
+}
+function outProject() {
+	xBut();
+	
+	var pn = document.getElementById('projectNull');
+	prr.style.animation = "fadeout 0.4s";
+	pr.style.animation = "rollup 1s forwards";
+	pr.style.height = "210px";
+	pn.style.height = "330px";
+	pn.style.opacity = "1";
+	setTimeout(() => {
+		prr.style.display = "none";
+    }, 390);
+}
+function prModify() {
+	xBut();
+	pr.style.animation = "rollleft 1s"
+	prr.style.animation = "fadeout 1s"
+	setTimeout(() => {
+		prr.style.display = "none";
+        prm.style.display = "block";
+        pr.style.animation = "rollright 1s"
+        prm.style.animation = "fadein 2s"
+        oBut();
+    }, 990);
 }

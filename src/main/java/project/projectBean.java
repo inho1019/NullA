@@ -2,7 +2,7 @@ package project;
 
 public class projectBean {
 	private String writer,url,thumb,title,content,logtime;
-	private int num;
+	private int num,count;
 	public String getWriter() {
 		return writer;
 	}
@@ -44,5 +44,11 @@ public class projectBean {
 	}
 	public void setNum(int num) {
 		this.num = num;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 }

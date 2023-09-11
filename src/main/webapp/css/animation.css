@@ -25,6 +25,9 @@
 @keyframes rollup {
     100% {transform: perspective(100vw) rotateX(-180deg) };
 }
+@keyframes rolldown {
+    100% {transform: perspective(100vw) rotateX(180deg) };
+}
 @keyframes scrollendup {
     60% {transform: translateY(5em) };
     100% {transform: translateY(0) };
