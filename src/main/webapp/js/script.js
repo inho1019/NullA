@@ -395,15 +395,24 @@ function mvScroll(a) {
 			prb.style.animation="0s";
 		}, 600);
 	} else if(scroll > hdnpb.value) {
-		prb.style.animation="scrollenddown 0.6s";
-		up.style.display = "none";
-		down.style.display = "none";
-		scroll -= 10;
-		setTimeout(() => {
-			up.style.display = "block";
-			down.style.display = "block";
-			prb.style.animation="0s"
-		}, 600);
+		if (scroll-10 == hdnpb.value-1) {
+			prb.style.animation="scrollenddown 0.6s";
+			up.style.display = "none";
+			down.style.display = "none";
+			scroll -= 10;
+			setTimeout(() => {
+				up.style.display = "block";
+				down.style.display = "block";
+				prb.style.animation="0s"
+			}, 600);
+		} else {
+			scroll = hdnpb.value-1;
+			pitem[scroll].scrollIntoView({behavior:'smooth',block: 'nearest'});
+		   	document.addEventListener('wheel', wheel, { passive: false });
+		   	setTimeout(() => {
+				document.removeEventListener('wheel', wheel);
+		    }, 1000);
+		}
 	} else {
 	   	pitem[scroll].scrollIntoView({behavior:'smooth',block: 'nearest'});
 	   	document.addEventListener('wheel', wheel, { passive: false });

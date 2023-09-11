@@ -8,7 +8,7 @@
 
 	projectDAO pd = new projectDAO();
 
-	projectBean pb = pd.readPR(request.getParameter("num"));
+	projectBean pb = pd.readPR(request.getParameter("num"),1);
 %>
 <div><div class="projectReadTop"><h1><%=pb.getTitle()%></h1>
 <img alt="projectIMG" onerror="this.src='img/project.png'" src="

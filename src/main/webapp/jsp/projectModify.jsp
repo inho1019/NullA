@@ -5,7 +5,7 @@
  <%
  	projectDAO pd = new projectDAO();
 
-	projectBean pb = pd.readPR(request.getParameter("num"));
+	projectBean pb = pd.readPR(request.getParameter("num"),0);
  	String sc = "0";
 	if(request.getParameter("sc") != null) {
 		sc = request.getParameter("sc");
