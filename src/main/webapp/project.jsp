@@ -52,8 +52,9 @@
         <section id="projectNull">
        	</section>
     </main>
-    <footer style="text-align: center;">
-    	png,ico by Freepik
+     <footer style="text-align: center;">
+    	문의 : dagapro21@gmail.com
+	<p style="font-size:10px">png,ico by Freepik</p>
     </footer>
 </div>
 <script type="text/javascript" src="js/script.js"></script>
