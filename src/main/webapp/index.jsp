@@ -89,6 +89,7 @@
     </main>
     <footer style="text-align: center;">
     	png,ico by Freepik
+	문의 : dagapro21@gmail.com
     </footer>
 </div>
 <script type="text/javascript" src="js/script.js"></script>
