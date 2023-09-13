@@ -22,7 +22,7 @@
 		session.setAttribute("name", ub.getName());
 		session.setAttribute("email", ub.getEmail());
 		session.setAttribute("gender", ub.getGender());
-		session.setMaxInactiveInterval(3600);
+		session.setMaxInactiveInterval(10800);
 		%><script>alert('로그인 성공')
 		location.href='../index.jsp';</script><%
 	} else {
