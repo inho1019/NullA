@@ -53,8 +53,8 @@
        	</section>
     </main>
      <footer style="text-align: center;">
-    	문의 : dagapro21@gmail.com
-	<p style="font-size:10px">png,ico by Freepik</p>
+    	Email : dagapro21@gmail.com
+	<p style="font-size:12px">png,ico by Freepik</p>
     </footer>
 </div>
 <script type="text/javascript" src="js/script.js"></script>
