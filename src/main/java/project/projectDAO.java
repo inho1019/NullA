@@ -11,8 +11,8 @@ public class projectDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	private String root = "w7vhrm4xafn7o6696ll0";
-	private String password = "pscale_pw_PLhM3Xkaa5QE5Od50NQjXdnaL5f3Z47v77yhcUTICdP";
+	private String root = "c0lva891yr5paott84jb";
+	private String password = System.getenv("DB_PASSWORD");
 	private String url = "jdbc:mysql://aws.connect.psdb.cloud/anything?sslMode=VERIFY_IDENTITY";
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	
