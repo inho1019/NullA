@@ -1,6 +1,6 @@
 # Nulla
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a10cc81a-038e-43c7-be79-c89e4a580c88/157e4460-b003-43fb-9cb5-daf3461fa6b5/Untitled.png)
+![Untitled](https://raw.githubusercontent.com/inho1019/NullA/main/src/main/webapp/img/null.ico)
 
 분류 : 게시판
 
